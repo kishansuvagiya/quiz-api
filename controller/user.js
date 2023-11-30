@@ -1,22 +1,22 @@
 var userData = require('../models/user');
 const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken')
-var jwtKey = 'QuizAPI'
 
 exports.middledata = async function (req, res, next) {
   try {
-    let token = req.headers.token
-    if (token) {
-      jwt.verify(token, jwtKey, (error, valid) => {
-        if (error) {
-          throw new Error('Please provide valid token')
-        } else {
-          next()
-        }
-      })
-    } else {
-      throw new Error('Please add token')
+    let token = req.headers.authorization
+    // console.log(token);
+    if(!token){
+      throw new Error("Please attched token ")
     }
+    let decode = jwt.verify(token, process.env.JWT_KEY)
+    // console.log(decode.id);
+    let checkUser = await userData.findById(decode.id)
+    if(!checkUser){
+      throw new Error("User Not found")
+    }
+    // req.userId = decode.id
+    next()
   } catch (error) {
     res.status(404).json({
       status: "fail",
@@ -26,15 +26,15 @@ exports.middledata = async function (req, res, next) {
 }
 
 exports.signup = async function (req, res, next) {
+  // console.log(req.body);
   try {
     let signupData = req.body
-    // console.log(signupData);
     if (!signupData.username || !signupData.email || !signupData.password) {
       throw new Error("Please enter valid fields")
     }
     signupData.password = await bcrypt.hash(signupData.password, 6)
     const newUser = await userData.create(signupData)
-    let token = jwt.sign({ id: newUser._id }, jwtKey)
+    let token = jwt.sign({ id: newUser._id }, process.env.JWT_KEY)
     res.status(201).json({
       status: "success",
       message: "User signup successfully",
@@ -64,7 +64,7 @@ exports.login = async function (req, res, next) {
     if (!password) {
       throw new Error("pass is invalid")
     }
-    let token = jwt.sign({ id: email._id }, jwtKey)
+    let token = jwt.sign({ id: email._id }, process.env.JWT_KEY)
     res.status(200).json({
       status: "success",
       message: "User login succesfully",
