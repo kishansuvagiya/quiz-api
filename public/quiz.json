@@ -1,0 +1,233 @@
+[
+    {
+        "question": "Which of the following is not a primitive data type in JavaScript?",
+        "options": [
+            "Number",
+            "String",
+            "Boolean",
+            "Object"
+        ],
+        "answer": "Object",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What does the “typeof” operator do in JavaScript?",
+        "options": [
+            "Returns the data type of a variable",
+            " Checks if a variable is defined",
+            "Assigns a value to a variable",
+            "Concatenates two strings"
+        ],
+        "answer": "Returns the data type of a variable",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What is the output of the following code: console.log(2 + “2”);",
+        "options": [
+            "“4”",
+            "“22”",
+            "4",
+            "22"
+        ],
+        "answer": "“22”",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "Which of the following is not a comparison operator in JavaScript?",
+        "options": [
+            "==",
+            "===",
+            "!=",
+            "=<"
+        ],
+        "answer": "=<",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": " What is the output of the following code: var x = 5; console.log(x++);",
+        "options": [
+            " 4",
+            " 5",
+            "6",
+            "Error"
+        ],
+        "answer": "5",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What is the output of the following code: var x = true; console.log(!x);",
+        "options": [
+            "true",
+            "false",
+            "undefined",
+            "Error"
+        ],
+        "answer": "false",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What does the “NaN” value represent in JavaScript?",
+        "options": [
+            "Not a number",
+            "Null value",
+            "Undefined value",
+            "Boolean value"
+        ],
+        "answer": "Not a number",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What is the output of the following code: var x = 5; var y = “5”; console.log(x == y);",
+        "options": [
+            "true",
+            "false",
+            "undefined",
+            "Error"
+        ],
+        "answer": "true",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What is the correct way to declare a variable in JavaScript?",
+        "options": [
+            "var x = 5;",
+            "variable x = 5;",
+            "x = 5;",
+            "let x = 5;"
+        ],
+        "answer": "let x = 5;",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What does the “this” keyword refer to in JavaScript?",
+        "options": [
+            "The current function",
+            " The global object",
+            " The object that the function belongs to",
+            " The parent object of the current object"
+        ],
+        "answer": "The object that the function belongs to",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What is the output of the following code: var x = [1, 2, 3]; console.log(x.length);",
+        "options": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "answer": 3,
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What is the output of the following code: console.log(typeof NaN);",
+        "options": [
+            "“number”",
+            " “string”",
+            " “undefined”",
+            " “NaN”"
+        ],
+        "answer": "“number”",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What does the “forEach” method do in JavaScript?",
+        "options": [
+            "Adds a new element to the end of an array",
+            " Removes an element from the beginning of an array",
+            "Executes a function once for each element in an array",
+            " Reverses the order of the elements in an array"
+        ],
+        "answer": "Executes a function once for each element in an array",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What is the output of the following code: console.log(2 ** 3);",
+        "options": [
+            5,
+            6,
+            8,
+            9
+        ],
+        "answer": 8,
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What is the correct syntax for a “for” loop in JavaScript?",
+        "options": [
+            "for (var i = 0; i < 5; i++)",
+            " for (i = 0; i < 5; i++)",
+            " for (var i = 5; i > 0; i–)",
+            " for (i = 5; i > 0; i–)"
+        ],
+        "answer": "for (var i = 0; i < 5; i++)",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What is the output of the following code: var x = 5; var y = “5”; console.log(x === y);",
+        "options": [
+            true,
+            false,
+            "undefined",
+            "Error"
+        ],
+        "answer": false,
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What is the difference between “==” and “===” operators in JavaScript?",
+        "options": [
+            "They are interchangeable",
+            " “==” performs a strict comparison, while “===” performs a loose comparison",
+            " “===” performs a strict comparison, while “==” performs a loose comparison",
+            " They both perform the same type of comparison"
+        ],
+        "answer": "“===” performs a strict comparison, while “==” performs a loose comparison",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What is the output of the following code: var x = 10; var y = “5”; console.log(x – y);",
+        "options": [
+            5,
+            10,
+            15,
+            " “105”"
+        ],
+        "answer": 5,
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What is the output of the following code: var x = [1, 2, 3]; var y = […x]; console.log(y);",
+        "options": [
+            "[1, 2, 3]",
+            " [3, 2, 1]",
+            " [1, 2]",
+            "Error"
+        ],
+        "answer": "[1, 2, 3]",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": "What is the output of the following code: console.log(Math.random());",
+        "options": [
+            0,
+            0.5,
+            1,
+            " A random number between 0 and 1"
+        ],
+        "answer": " A random number between 0 and 1",
+        "category": "656025937a74b3e001f0a284"
+    },
+    {
+        "question": " What is the difference between “let” and “const” keywords in JavaScript?",
+        "options": [
+            "They are interchangeable",
+            " “let” variables cannot be reassigned, while “const” variables can",
+            " “const” variables cannot be reassigned, while “let” variables can",
+            " “let” and “const” both refer to constant variables"
+        ],
+        "answer": "“const” variables cannot be reassigned, while “let” variables can",
+        "category": "656025937a74b3e001f0a284"
+    }
+]
