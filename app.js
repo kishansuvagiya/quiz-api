@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -9,7 +10,7 @@ var usersRouter = require('./routes/users');
 
 const mongoose = require('mongoose');
 // mongoose.connect('mongodb://127.0.0.1:27017/quiz')
-mongoose.connect('mongodb+srv://kishansuvagiya:kishan161095@cluster0.  git commit -m "first commit".mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log('Connected!'))
   .catch((error) => console.log(error.message));
 
