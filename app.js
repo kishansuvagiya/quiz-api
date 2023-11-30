@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 
 const mongoose = require('mongoose');
 // mongoose.connect('mongodb://127.0.0.1:27017/quiz')
-mongoose.connect('mongodb+srv://kishansuvagiya:kishan161095@cluster0.q3yb2we.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://kishansuvagiya:kishan161095@cluster0.  git commit -m "first commit".mongodb.net/?retryWrites=true&w=majority')
   .then(() => console.log('Connected!'))
   .catch((error) => console.log(error.message));
 
