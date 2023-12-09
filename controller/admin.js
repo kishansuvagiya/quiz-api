@@ -8,7 +8,7 @@ exports.SECURE = async function (req, res, next) {
     let token = req.headers.authorization
     // console.log(token);
     if(!token){
-      throw new Error("Please attched token ")
+      throw new Error("Please attched token")
     }
     let decode = jwt.verify(token, process.env.ADMIN_KEY)
     // console.log(decode.id);
@@ -39,7 +39,7 @@ exports.signUp = async function (req, res) {
         var token = jwt.sign({ id: data._id }, process.env.ADMIN_KEY);
         res.status(201).json({
             status: "success",
-            message: "SignUp successfully",
+            message: "Admin SignUp successfully",
             data: newUser,
             token
         })
@@ -69,7 +69,7 @@ exports.login = async function (req, res, next) {
       var token = jwt.sign({ id: email._id }, process.env.ADMIN_KEY);
       res.status(200).json({
         status: "success",
-        message: "User login succesfully",
+        message: "Admin login succesfully",
         data: email,
         token
       })
@@ -87,7 +87,7 @@ exports.login = async function (req, res, next) {
         let data = await user.findByIdAndDelete(req.query.id)
         res.status(200).json({
             status: "success",
-            messeage: "User deleted",
+            message: "User deleted",
             data: data
         })
     } catch (error) {

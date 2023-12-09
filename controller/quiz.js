@@ -9,7 +9,7 @@ exports.AddQuestion = async function (req, res, next) {
         const newData = await queData.create(data)
         res.status(201).json({
             status: "success",
-            messeage: "Question add successfully",
+            message: "Question add successfully",
             data: newData
         })
     } catch (error) {
@@ -24,7 +24,7 @@ exports.AllQuestion = async function (req, res, next) {
         let data = await queData.find().populate('category')
         res.status(200).json({
             status: "success",
-            messeage: "All your data",
+            message: "All your data",
             data: data
         })
     } catch (error) {
@@ -39,7 +39,7 @@ exports.DeleteQuestion = async function (req, res, next) {
         let data = await queData.findByIdAndDelete(req.query.id)
         res.status(200).json({
             status: "success",
-            messeage: "Your data deleted",
+            message: "Your data deleted",
             data: data
         })
     } catch (error) {
@@ -54,7 +54,7 @@ exports.UpdateQuestion = async function (req, res, next) {
         let data = await queData.findByIdAndUpdate(req.query.id, req.body, { new: true })
         res.status(200).json({
             status: "success",
-            messeage: "Your data updated",
+            message: "Your data updated",
             data: data
         })
     } catch (error) {

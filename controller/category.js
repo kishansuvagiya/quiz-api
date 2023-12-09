@@ -10,7 +10,7 @@ exports.AddCategory = async function (req, res, next) {
         const newCategory = await catData.create(category)
         res.status(201).json({
             status: "success",
-            messeage: "Category add successfully",
+            message: "Category add successfully",
             data: newCategory
         })
     } catch (error) {
@@ -25,7 +25,7 @@ exports.AllCategory = async function (req, res, next) {
         let data = await catData.find()
         res.status(200).json({
             status: "success",
-            messeage: "All your data",
+            message: "All your data",
             data: data
         })
     } catch (error) {
@@ -40,7 +40,7 @@ exports.DeleteCategory = async function (req, res, next) {
         let data = await catData.findByIdAndDelete(req.query.id)
         res.status(200).json({
             status: "success",
-            messeage: "Your data deleted",
+            message: "Your data deleted",
             data: data
         })
     } catch (error) {
@@ -55,7 +55,7 @@ exports.UpdateCategory = async function (req, res, next) {
         let data = await catData.findByIdAndUpdate(req.query.id, req.body, { new: true })
         res.status(200).json({
             status: "success",
-            messeage: "Your data updated",
+            message: "Your data updated",
             data: data
         })
     } catch (error) {

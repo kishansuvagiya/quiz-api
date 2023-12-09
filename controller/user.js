@@ -7,7 +7,7 @@ exports.middledata = async function (req, res, next) {
     let token = req.headers.authorization
     // console.log(token);
     if(!token){
-      throw new Error("Please attched token ")
+      throw new Error("Please attched token")
     }
     let decode = jwt.verify(token, process.env.JWT_KEY)
     // console.log(decode.id);
@@ -37,7 +37,7 @@ exports.signup = async function (req, res, next) {
     let token = jwt.sign({ id: newUser._id }, process.env.JWT_KEY)
     res.status(201).json({
       status: "success",
-      message: "User signup successfully",
+      message: "Signup successfully",
       data: newUser,
       token
     })
@@ -58,16 +58,16 @@ exports.login = async function (req, res, next) {
     let email = await userData.findOne({ email: loginData.email })
     // console.log(email.password);
     if (!email) {
-      throw new Error("Email is wrong")
+      throw new Error("Invalid email or password. Please try again.")
     }
     let password = await bcrypt.compare(loginData.password, email.password)
     if (!password) {
-      throw new Error("pass is invalid")
+      throw new Error("Invalid email or password. Please try again.")
     }
     let token = jwt.sign({ id: email._id }, process.env.JWT_KEY)
     res.status(200).json({
       status: "success",
-      message: "User login succesfully",
+      message: "Login succesfully",
       data: email,
       token
     })
