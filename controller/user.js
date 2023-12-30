@@ -31,6 +31,10 @@ exports.signup = async function (req, res, next) {
     if (!signupData.fullname || !signupData.email || !signupData.password) {
       throw new Error("Please enter valid fields")
     }
+    let email = await userData.findOne({ email: signupData.email })
+    if (email) {
+      throw new Error("Email already exists !")
+    }
     signupData.password = await bcrypt.hash(signupData.password, 6)
     const newUser = await userData.create(signupData)
     let token = jwt.sign({ id: newUser._id }, process.env.JWT_KEY)
@@ -57,11 +61,11 @@ exports.login = async function (req, res, next) {
     let email = await userData.findOne({ email: loginData.email })
     // console.log(email.password);
     if (!email) {
-      throw new Error("Invalid email or password. Please try again.")
+      throw new Error("Invalid email or password !")
     }
     let password = await bcrypt.compare(loginData.password, email.password)
     if (!password) {
-      throw new Error("Invalid email or password. Please try again.")
+      throw new Error("Invalid email or password !")
     }
     let token = jwt.sign({ id: email._id }, process.env.JWT_KEY)
     res.status(200).json({
