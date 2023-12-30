@@ -16,7 +16,6 @@ exports.SECURE = async function (req, res, next) {
     if(!checkUser){
       throw new Error("User Not found")
     }
-    // req.userId = decode.id
     next()
   }
   catch (error) {

@@ -15,7 +15,6 @@ exports.middledata = async function (req, res, next) {
     if(!checkUser){
       throw new Error("User Not found")
     }
-    // req.userId = decode.id
     next()
   } catch (error) {
     res.status(404).json({
@@ -29,7 +28,7 @@ exports.signup = async function (req, res, next) {
   // console.log(req.body);
   try {
     let signupData = req.body
-    if (!signupData.username || !signupData.email || !signupData.password) {
+    if (!signupData.fullname || !signupData.email || !signupData.password) {
       throw new Error("Please enter valid fields")
     }
     signupData.password = await bcrypt.hash(signupData.password, 6)
