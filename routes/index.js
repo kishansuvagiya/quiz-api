@@ -13,11 +13,13 @@ router.get('/', function (req, res, next) {
 // ------------- admin api----------------------
 router.post('/signup', adminController.signUp)
 router.post('/login', adminController.login)
-router.post('/userdelte', adminController.DeleteUser)
+router.post('/userdelete', adminController.DeleteUser)
 
 // ------------- user api----------------------
 router.post('/user/signup', userController.signup)
 router.post('/user/login', userController.login)
+router.post('/user/forgot-password', userController.forgotPassword)
+router.post('/user/verify-otp', userController.verifyOTP)
 
 // ------------- category api----------------------
 router.post('/category', adminController.SECURE, catController.AddCategory)

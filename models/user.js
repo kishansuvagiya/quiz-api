@@ -12,7 +12,8 @@ const userSchema = new Schema({
     lowercase: true,
     trim: true
   },
-  password: String
+  password: String,
+  otpSecret: String
 });
 
 let userData = mongoose.model('user', userSchema)
